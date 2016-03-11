@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="cse5914.techteam.DemoPageActivity"
+    tools:showIn="@layout/activity_demo_page">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speech to text"
+        android:id="@+id/speak"
+        tools:context=".VoiceRecognitionActivity"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speakOutput"
+        android:layout_below="@+id/speak"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Google map"
+        android:id="@+id/map"
+        android:layout_below="@+id/speakOutput"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch the background color"
+        android:id="@+id/switchColor"
+        android:layout_below="@+id/map"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera"
+        android:id="@+id/callCamera"
+        android:layout_below="@+id/switchColor"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accelerometer"
+        android:id="@+id/titleForAccelerometer"
+        android:layout_below="@+id/callCamera"/>
+
+    <fragment android:name="cse5914.techteam.AccelerometerFragment"
+              android:id="@+id/accelerometer_fragment"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/titleForAccelerometer"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ambient light"
+        android:id="@+id/titleForLight"
+        android:layout_below="@+id/accelerometer_fragment"/>
+
+    <fragment android:name="cse5914.techteam.LightFragment"
+              android:id="@+id/light_fragment"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/titleForLight"/>
+
+</RelativeLayout>
